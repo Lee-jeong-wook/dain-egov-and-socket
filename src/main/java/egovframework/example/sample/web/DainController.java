@@ -46,8 +46,8 @@ public class DainController {
         return li;
     }
 
-    @GetMapping("/smp.do")
+    @GetMapping("/getLocCCTV")
     public @ResponseBody Loc selectSampleList() throws Exception {
-        return dainService.selectLoc("S-001");
+        return dainService.getLocWithCCTV("S-001");
     }
 }

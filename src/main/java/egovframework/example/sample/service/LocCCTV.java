@@ -17,17 +17,19 @@ package egovframework.example.sample.service;
 
 import lombok.AllArgsConstructor;
 
+import java.util.List;
+
 public class LocCCTV extends Loc {
-    private CCTV[] cctvList;
-    public LocCCTV(String id, String name, String trty, float lat, float lng, CCTV[] cctvList) {
-        super(id, name, trty, lat, lng);
+    private List<CCTV> cctvList;
+    public LocCCTV(Loc loc) {
+        super(loc.getId(), loc.getName(), loc.getTrty(), loc.getLat(), loc.getLng());
     }
 
-    public CCTV[] getCctvList() {
+    public List<CCTV> getCctvList() {
         return cctvList;
     }
 
-    public void setCctvList(CCTV[] cctvList) {
+    public void setCctvList(List<CCTV> cctvList) {
         this.cctvList = cctvList;
     }
 }

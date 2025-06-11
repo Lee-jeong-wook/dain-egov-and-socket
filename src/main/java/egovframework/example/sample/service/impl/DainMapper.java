@@ -15,7 +15,9 @@
  */
 package egovframework.example.sample.service.impl;
 
+import egovframework.example.sample.service.CCTV;
 import egovframework.example.sample.service.Loc;
+import egovframework.example.sample.service.LocCCTV;
 import org.egovframe.rte.psl.dataaccess.mapper.Mapper;
 
 import java.util.List;
@@ -38,6 +40,6 @@ import java.util.List;
 @Mapper("Dain")
 public interface DainMapper {
 	Loc selectLoc(String locId) throws Exception;
-	List<?> selectCCTVList(String locId) throws Exception;
+	List<CCTV> selectCCTVList(String locId) throws Exception;
 
 }

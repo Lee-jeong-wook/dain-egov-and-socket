@@ -15,8 +15,10 @@
  */
 package egovframework.example.sample.service.impl;
 
+import egovframework.example.sample.service.CCTV;
 import egovframework.example.sample.service.DainService;
 import egovframework.example.sample.service.Loc;
+import egovframework.example.sample.service.LocCCTV;
 import lombok.RequiredArgsConstructor;
 import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
 import org.egovframe.rte.fdl.idgnr.EgovIdGnrService;
@@ -40,7 +42,14 @@ public class DainServiceImpl implements DainService {
 	}
 
 	@Override
-	public List<?> selectCCTVList(String locId) throws Exception {
+	public List<CCTV> selectCCTVList(String locId) throws Exception {
 		return dainMapper.selectCCTVList(locId);
+	}
+
+	@Override
+	public LocCCTV getLocWithCCTV(String locId) throws Exception {
+		LocCCTV locCCTV = new LocCCTV(dainMapper.selectLoc(locId));
+		locCCTV.setCctvList(dainMapper.selectCCTVList(locId));
+		return locCCTV;
 	}
 }

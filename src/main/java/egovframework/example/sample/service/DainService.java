@@ -21,4 +21,6 @@ public interface DainService {
 	Loc selectLoc(String locId) throws Exception;
 
 	List<?> selectCCTVList(String locId) throws Exception;
+
+	LocCCTV getLocWithCCTV(String locId) throws  Exception;
 }
