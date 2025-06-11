@@ -4,43 +4,43 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class CCTV{
-    private String id;
+    private String cctvID;
 
-    private String name;
+    private String cctvName;
 
-    private float cnmp;
+    private float powerCnmp;
 
-    private String loc_id;
+    private String locId;
 
-    public String getId() {
-        return id;
+    public String getCctvID() {
+        return cctvID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCctvID(String cctvID) {
+        this.cctvID = cctvID;
     }
 
-    public String getName() {
-        return name;
+    public String getCctvName() {
+        return cctvName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCctvName(String cctvName) {
+        this.cctvName = cctvName;
     }
 
-    public float getCnmp() {
-        return cnmp;
+    public float getPowerCnmp() {
+        return powerCnmp;
     }
 
-    public void setCnmp(float cnmp) {
-        this.cnmp = cnmp;
+    public void setPowerCnmp(float powerCnmp) {
+        this.powerCnmp = powerCnmp;
     }
 
-    public String getLoc_id() {
-        return loc_id;
+    public String getLocId() {
+        return locId;
     }
 
-    public void setLoc_id(String loc_id) {
-        this.loc_id = loc_id;
+    public void setLocId(String locId) {
+        this.locId = locId;
     }
 }

@@ -17,56 +17,61 @@ package egovframework.example.sample.service;
 
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 public class Loc{
-	private String id;
+	Loc(String locID){
+		this.locID = locID;
+	}
+	private String locID;
 
-	private String name;
+	private String locName;
 
-	private String trty;
+	private String locTrty;
 
-	private float lat;
+	private float locLat;
 
-	private float lng;
+	private float locLng;
 
-	public String getId() {
-		return id;
+	public String getLocID() {
+		return locID;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setLocID(String locID) {
+		this.locID = locID;
 	}
 
-	public String getName() {
-		return name;
+	public String getLocName() {
+		return locName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLocName(String locName) {
+		this.locName = locName;
 	}
 
-	public String getTrty() {
-		return trty;
+	public String getLocTrty() {
+		return locTrty;
 	}
 
-	public void setTrty(String trty) {
-		this.trty = trty;
+	public void setLocTrty(String locTrty) {
+		this.locTrty = locTrty;
 	}
 
-	public float getLat() {
-		return lat;
+	public float getLocLat() {
+		return locLat;
 	}
 
-	public void setLat(float lat) {
-		this.lat = lat;
+	public void setLocLat(float locLat) {
+		this.locLat = locLat;
 	}
 
-	public float getLng() {
-		return lng;
+	public float getLocLng() {
+		return locLng;
 	}
 
-	public void setLng(float lng) {
-		this.lng = lng;
+	public void setLocLng(float locLng) {
+		this.locLng = locLng;
 	}
 }

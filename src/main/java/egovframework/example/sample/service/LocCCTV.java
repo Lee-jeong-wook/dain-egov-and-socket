@@ -22,7 +22,7 @@ import java.util.List;
 public class LocCCTV extends Loc {
     private List<CCTV> cctvList;
     public LocCCTV(Loc loc) {
-        super(loc.getId(), loc.getName(), loc.getTrty(), loc.getLat(), loc.getLng());
+        super(loc.getLocID(), loc.getLocName(), loc.getLocTrty(), loc.getLocLat(), loc.getLocLng());
     }
 
     public List<CCTV> getCctvList() {

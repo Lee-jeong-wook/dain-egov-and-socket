@@ -3,24 +3,24 @@
 <mapper namespace="egovframework.example.sample.service.impl.DainMapper">
 
 	<resultMap id="cctv" type="egovframework.example.sample.service.CCTV">
-		<result property="id" column="cctv_id"/>
-		<result property="name" column="cctv_name"/>
-		<result property="cnmp" column="power_cnmp"/>
-		<result property="loc_id" column="cctv_loc_id"/>
+		<result property="cctvID" column="cctv_id"/>
+		<result property="cctvName" column="cctv_name"/>
+		<result property="powerCnmp" column="power_cnmp"/>
+		<result property="locID" column="cctv_loc_id"/>
 	</resultMap>
 	<resultMap id="loc" type="egovframework.example.sample.service.Loc">
-		<result property="id" column="loc_id"/>
-		<result property="name" column="loc_name"/>
-		<result property="trty" column="loc_trty"/>
-		<result property="lat" column="loc_lat"/>
-		<result property="lng" column="loc_lng"/>
+		<result property="locID" column="loc_id"/>
+		<result property="locName" column="loc_name"/>
+		<result property="locTrty" column="loc_trty"/>
+		<result property="locLat" column="loc_lat"/>
+		<result property="locLng" column="loc_lng"/>
 	</resultMap>
 
 	<select id="selectLoc" parameterType="String" resultMap="loc">
 			SELECT
 				loc_id, loc_name, loc_trty, loc_lat, loc_lng
 			FROM loc
-			WHERE loc_id=#{id}
+			WHERE loc_id=#{locID}
 
 	</select>
 
@@ -28,6 +28,6 @@
 			SELECT
 				cctv_id, cctv_name, power_cnmp, cctv_loc_id
 			FROM cctv
-			WHERE cctv_loc_id = #{loc_id}
+			WHERE cctv_loc_id = #{locID}
 	</select>
 </mapper>

@@ -33,7 +33,7 @@ import org.springmodules.validation.commons.DefaultBeanValidator;
 
 import lombok.RequiredArgsConstructor;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class DainController {
     private final DainService dainService;
@@ -46,8 +46,8 @@ public class DainController {
         return li;
     }
 
-    @GetMapping("/getLocCCTV")
-    public @ResponseBody Loc selectSampleList() throws Exception {
-        return dainService.getLocWithCCTV("S-001");
+    @PostMapping("/getLocCCTV")
+    public Loc selectSampleList(@RequestBody Loc loc) throws Exception {
+        return dainService.getLocWithCCTV(loc.getLocID());
     }
 }
