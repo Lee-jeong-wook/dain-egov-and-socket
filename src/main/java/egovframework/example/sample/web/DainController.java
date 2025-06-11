@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import egovframework.example.sample.service.*;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import org.springframework.stereotype.Controller;
@@ -30,14 +31,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springmodules.validation.commons.DefaultBeanValidator;
 
-import egovframework.example.sample.service.EgovSampleService;
-import egovframework.example.sample.service.SampleDefaultVO;
-import egovframework.example.sample.service.SampleVO;
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
 public class DainController {
+    private final DainService dainService;
     @GetMapping("/sample.do")
     public @ResponseBody List<Map<String, String>> selectSampleList(@ModelAttribute("searchVO") SampleDefaultVO searchVO, ModelMap model) throws Exception {
         Map<String, String> map = new HashMap<String, String>();
@@ -45,5 +44,10 @@ public class DainController {
         List<Map<String, String>> li = new ArrayList<>();
         li.add(map);
         return li;
+    }
+
+    @GetMapping("/smp.do")
+    public @ResponseBody Loc selectSampleList() throws Exception {
+        return dainService.selectLoc("S-001");
     }
 }
