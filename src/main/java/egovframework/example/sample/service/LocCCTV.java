@@ -15,8 +15,6 @@
  */
 package egovframework.example.sample.service;
 
-import lombok.AllArgsConstructor;
-
 import java.util.List;
 
 public class LocCCTV extends Loc {

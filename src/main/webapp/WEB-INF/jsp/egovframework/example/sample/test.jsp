@@ -103,8 +103,7 @@
         console.log(subscribeUrl);
         stompClient.subscribe(subscribeUrl, function (message) {
             const msg = JSON.parse(message.body);
-            alert(msg.cctvLocname + `에`+ msg.event+`를`+ msg.cctvId + `가 감지`)
-                document.getElementById("receivedMessages").textContent += JSON.stringify(msg, null, 2) + '\n';
+            alert(msg.cctvLocname + `에`+ msg.event+`를`+ msg.cctvId + `가 감지`);
         });
         subscribed = true;
         alert(cctvId+` 구독 시작`);

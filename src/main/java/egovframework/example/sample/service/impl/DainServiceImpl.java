@@ -20,8 +20,6 @@ import egovframework.example.sample.service.DainService;
 import egovframework.example.sample.service.Loc;
 import egovframework.example.sample.service.LocCCTV;
 import lombok.RequiredArgsConstructor;
-import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
-import org.egovframe.rte.fdl.idgnr.EgovIdGnrService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
