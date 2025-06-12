@@ -28,7 +28,7 @@
     let cctvId = null;
 
     function connect() {
-        const socket = new SockJS('/topic');
+        const socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
 
         stompClient.connect({}, function () {
@@ -51,10 +51,9 @@
         const cctvId = document.getElementById("cctvId").value;
         const message = {
             cctvId: cctvId,
-            content: document.getElementById("messageText").value,
-            sender: "clientUser"
+            event: document.getElementById("messageText").value,
+            // sender: "clientUser"
         };
-
         stompClient.send("/pub/cctv", {}, JSON.stringify(message));
     }
 

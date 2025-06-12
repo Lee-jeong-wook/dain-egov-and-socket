@@ -1,14 +1,16 @@
 package egovframework.example.sample.service;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-public class Message {
+@NoArgsConstructor
+public class CCTVMessage {
     String cctvId;
     String cctvLocname;
     String event;
-    Message(String cctvID, String event){
-        this.cctvId = cctvID;
+    CCTVMessage(String cctvId, String event){
+        this.cctvId = cctvId;
         this.cctvLocname = event;
     };
 
