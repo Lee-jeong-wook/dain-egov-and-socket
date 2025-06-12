@@ -52,4 +52,14 @@ public class DainServiceImpl implements DainService {
 		locCCTV.setCctvList(dainMapper.selectCCTVList(locId));
 		return locCCTV;
 	}
+
+	@Override
+	public CCTV getCCtv(String cctvId) throws Exception {
+		return dainMapper.selectCCTV(cctvId);
+	}
+
+	@Override
+	public List<CCTV> selectAllCCtvList() throws Exception {
+		return dainMapper.selectCCTVListAll();
+	}
 }

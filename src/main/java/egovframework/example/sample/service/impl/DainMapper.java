@@ -41,5 +41,7 @@ import java.util.List;
 public interface DainMapper {
 	Loc selectLoc(String locId) throws Exception;
 	List<CCTV> selectCCTVList(String locId) throws Exception;
+	List<CCTV> selectCCTVListAll() throws Exception;
+	CCTV selectCCTV(String cctvId) throws Exception;
 
 }

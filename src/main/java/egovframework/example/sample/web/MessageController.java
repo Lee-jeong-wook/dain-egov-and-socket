@@ -20,8 +20,11 @@ public class MessageController {
     private final SimpMessagingTemplate template;
 
     @MessageMapping("/cctv")
-    public void sendCctvEvent(Message<CCTVMessage> message){
-        System.out.println(message.getPayload().getCctvId());
-        template.convertAndSend("/sub/cctv/" + message.getPayload().getCctvId(), message.getPayload());
+    public void sendCctvEvent(Message<CCTVMessage> message) throws Exception {
+        CCTVMessage cctvMessage = new CCTVMessage();
+        cctvMessage.setCctvId(message.getPayload().getCctvId());
+        cctvMessage.setCctvLocname(dainService.getLocWithCCTV(dainService.getCCtv(message.getPayload().getCctvId()).getLocId()).getLocName());
+        cctvMessage.setEvent(message.getPayload().getEvent());
+        template.convertAndSend("/sub/cctv/" + message.getPayload().getCctvId(), cctvMessage);
     }
 }

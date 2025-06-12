@@ -30,4 +30,17 @@
 			FROM cctv
 			WHERE cctv_loc_id = #{locID}
 	</select>
+
+	<select id="selectCCTV" parameterType="String" resultType="cctv">
+		SELECT
+			cctv_id, cctv_name, power_cnmp, cctv_loc_id
+		FROM cctv
+		WHERE cctv_id = #{cctv_id}
+	</select>
+
+	<select id="selectCCTVListAll" parameterType="String" resultType="cctv">
+		SELECT
+			cctv_id, cctv_name, power_cnmp, cctv_loc_id
+		FROM cctv
+	</select>
 </mapper>
